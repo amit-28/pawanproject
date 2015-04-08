@@ -4,5 +4,8 @@
     <string name="app_name">Load Khoj</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="title_activity_register_part_one">RegisterPartOne</string>
+    <string name="title_activity_load_khoj_main">LoadKhojMainActivity</string>
+    <string name="title_activity_register_part_two">register_part_two</string>
 
 </resources>

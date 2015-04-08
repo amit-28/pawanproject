@@ -8,28 +8,28 @@ import android.view.MenuItem;
 import android.widget.TextView;
 
 
-public class LoadKhojMainActivity extends ActionBarActivity {
+public class RegisterPartTwo extends ActionBarActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_load_khoj_main);
-
+        setContentView(R.layout.activity_register_part_two);
         // Get the message from the intent
         Intent intent = getIntent();
-        String loginEmailId = intent.getStringExtra(LoginActivity.loginEmailIdMessage);
-        String loginPassword = intent.getStringExtra(LoginActivity.loginPasswordMessage);
+        String registerFullName = intent.getStringExtra(RegisterPartOne.registerFullNameMessage);
+        String registerMobileNumber = intent.getStringExtra(RegisterPartOne.registerMobileNumberMessage);
+        String registerEmailId = intent.getStringExtra(RegisterPartOne.registerEmailIdMessage);
+        String registerPassword = intent.getStringExtra(RegisterPartOne.registerPasswordMessage);
 
         // Create the text view
-        TextView textView = (TextView) findViewById(R.id.loginUserData);
-        textView.setText("email: "+loginEmailId+" Password:"+loginPassword);
+        TextView textView = (TextView) findViewById(R.id.Rp2);
+        textView.setText("fullname: "+registerFullName+" no:"+registerMobileNumber+"email: "+registerEmailId+" Password:"+registerPassword);
     }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_load_khoj_main, menu);
+        getMenuInflater().inflate(R.menu.menu_register_part_two, menu);
         return true;
     }
 
