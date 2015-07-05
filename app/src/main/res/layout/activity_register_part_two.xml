@@ -1,104 +1,156 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
-    tools:context="freeversion.loadboard.com.loadkhoj.RegisterPartTwo">
+    tools:context="freeversion.loadboard.com.loadkhoj.RegisterPartTwo"
+    android:background="@color/white"
+    android:orientation="vertical">
 
-    <EditText
-        android:layout_width="wrap_content"
+    <!--Main Image-->
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/editText5"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="162dp"
-        android:hint="Type of Company"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="20dp">
 
-    <EditText
-        android:layout_width="wrap_content"
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageView3"
+            android:src="@drawable/logo3"
+            android:layout_centerHorizontal="true" />
+
+    </LinearLayout>
+
+    <!--Registration Part 2 input fields-->
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/editText6"
-        android:layout_below="@+id/editText5"
-        android:hint="Company Name"
-        android:layout_alignRight="@+id/editText5"
-        android:layout_alignEnd="@+id/editText5"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:orientation="vertical"
+        android:layout_marginTop="20dp">
 
-    <EditText
-        android:layout_width="wrap_content"
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/editText5"
+            android:hint="Type of Company" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/editText6"
+            android:maxLength="50"
+            android:hint="Company Name" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="10">
+
+            <EditText
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/std"
+                android:hint="STD"
+                android:layout_weight="7"
+                android:maxLength="5"
+                android:singleLine="true" />
+
+            <EditText
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/landline"
+                android:hint="Landline"
+                android:maxLength="8"
+                android:layout_weight="3"
+                android:singleLine="true" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="10">
+
+            <EditText
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/countryCode"
+                android:hint="CC"
+                android:layout_weight="8"
+                android:maxLength="1"
+                android:singleLine="true"
+                android:text="+91"
+                android:editable="false" />
+
+            <EditText
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/mobileNo"
+                android:inputType="number"
+                android:hint="Mobile Number"
+                android:layout_weight="2"
+                android:maxLength="10"
+                android:singleLine="true" />
+
+        </LinearLayout>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textMultiLine"
+            android:ems="10"
+            android:id="@+id/editText10"
+            android:hint="Address"
+            android:maxLength="500"
+            android:maxLines="3" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/editText11"
+            android:maxLines="1"
+            android:hint="City" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/editText7"
-        android:layout_below="@+id/editText6"
-        android:layout_centerHorizontal="true" />
+        android:layout_marginTop="5dp"
+        android:gravity="center"
+        android:layout_marginBottom="5dp">
 
-    <EditText
-        android:layout_width="wrap_content"
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Next >"
+            android:id="@+id/button4" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/editText8"
-        android:layout_below="@+id/editText6"
-        android:layout_alignRight="@+id/editText6"
-        android:layout_alignEnd="@+id/editText6"
-        android:hint="Landline"
-        android:layout_toEndOf="@+id/editText7"
-        android:layout_toRightOf="@+id/editText7" />
+        android:layout_marginTop="5dp"
+        android:gravity="center">
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/editText9"
-        android:layout_below="@+id/editText6"
-        android:layout_alignLeft="@+id/editText5"
-        android:layout_alignStart="@+id/editText5"
-        android:hint="STD"
-        android:layout_toLeftOf="@+id/editText8"
-        android:layout_toStartOf="@+id/editText8" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Data"
+            android:id="@+id/Rp2" />
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textMultiLine"
-        android:ems="10"
-        android:id="@+id/editText10"
-        android:layout_below="@+id/editText7"
-        android:hint="Address"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignRight="@+id/editText8"
-        android:layout_alignEnd="@+id/editText8" />
+    </LinearLayout>
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/editText11"
-        android:layout_below="@+id/editText10"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignRight="@+id/editText10"
-        android:layout_alignEnd="@+id/editText10"
-        android:hint="City" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="New Button"
-        android:id="@+id/button4"
-        android:layout_below="@+id/editText11"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="25dp" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Data"
-        android:id="@+id/Rp2"
-        android:layout_alignParentTop="true"
-        android:layout_alignLeft="@+id/button4"
-        android:layout_alignStart="@+id/button4" />
-
-</RelativeLayout>
+</LinearLayout>

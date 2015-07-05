@@ -23,6 +23,7 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 
+import freeversion.loadboard.com.loadkhoj.constants.ApiConstants;
 import freeversion.loadboard.com.loadkhoj.util.Util;
 
 
@@ -59,7 +60,7 @@ public class LoginActivity extends Activity {
         LoginConnectionAsyncTask myRequest = null;
         if (netInfo != null && netInfo.isConnected()) {
             myRequest = new LoginConnectionAsyncTask();
-            myRequest.execute("http://192.168.0.103/login.php");
+            myRequest.execute(ApiConstants.loginAPI);
         } else {
             responseTextView.setText("Net connection or wifi is disabled");
         }
@@ -92,7 +93,7 @@ public class LoginActivity extends Activity {
 
                 JSONObject auth = new JSONObject();
                 try {
-                    auth.put("userName", loginEmailIdEditText.getText().toString());
+                    auth.put("username", loginEmailIdEditText.getText().toString());
                     auth.put("password", loginPasswordEditText.getText().toString());
                 } catch (JSONException e) {
                     Log.wtf("Json Decode Error", e.getMessage());
