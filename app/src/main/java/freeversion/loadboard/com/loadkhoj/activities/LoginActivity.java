@@ -1,4 +1,4 @@
-package freeversion.loadboard.com.loadkhoj;
+package freeversion.loadboard.com.loadkhoj.activities;
 
 import android.app.Activity;
 import android.content.Context;
@@ -23,6 +23,7 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 
+import freeversion.loadboard.com.loadkhoj.R;
 import freeversion.loadboard.com.loadkhoj.constants.ApiConstants;
 import freeversion.loadboard.com.loadkhoj.util.Util;
 

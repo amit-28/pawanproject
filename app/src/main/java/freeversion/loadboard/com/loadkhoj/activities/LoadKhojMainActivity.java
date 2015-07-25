@@ -1,4 +1,4 @@
-package freeversion.loadboard.com.loadkhoj;
+package freeversion.loadboard.com.loadkhoj.activities;
 
 import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
+
+import freeversion.loadboard.com.loadkhoj.R;
 
 
 public class LoadKhojMainActivity extends ActionBarActivity {

@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <color name="grey_555">#555</color>
+    <color name="nd_subitem_devider">#f4f5f6</color>
+    <color name="nd_group_devider">#eef0f1</color>
     <color name="red">#ffff0000</color>
     <color name="white">#ffffff</color>
 </resources>

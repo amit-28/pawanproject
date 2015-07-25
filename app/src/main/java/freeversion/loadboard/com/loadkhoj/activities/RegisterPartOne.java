@@ -1,10 +1,12 @@
-package freeversion.loadboard.com.loadkhoj;
+package freeversion.loadboard.com.loadkhoj.activities;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+
+import freeversion.loadboard.com.loadkhoj.R;
 
 
 public class RegisterPartOne extends Activity {
