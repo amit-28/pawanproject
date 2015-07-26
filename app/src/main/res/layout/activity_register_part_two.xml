@@ -39,13 +39,13 @@
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/editText5"
+            android:id="@+id/registerTypeOfCompany"
             android:hint="Type of Company" />
 
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/editText6"
+            android:id="@+id/registerCompanyName"
             android:maxLength="50"
             android:hint="Company Name" />
 
@@ -58,7 +58,7 @@
             <EditText
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/std"
+                android:id="@+id/registerSTD"
                 android:hint="STD"
                 android:layout_weight="7"
                 android:maxLength="5"
@@ -67,7 +67,7 @@
             <EditText
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/landline"
+                android:id="@+id/registerLandline"
                 android:hint="Landline"
                 android:maxLength="8"
                 android:layout_weight="3"
@@ -84,7 +84,7 @@
             <EditText
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/countryCode"
+                android:id="@+id/registerCountryCode"
                 android:hint="CC"
                 android:layout_weight="8"
                 android:maxLength="1"
@@ -95,7 +95,7 @@
             <EditText
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/mobileNo"
+                android:id="@+id/registerMobileNumber"
                 android:inputType="number"
                 android:hint="Mobile Number"
                 android:layout_weight="2"
@@ -109,7 +109,7 @@
             android:layout_height="wrap_content"
             android:inputType="textMultiLine"
             android:ems="10"
-            android:id="@+id/editText10"
+            android:id="@+id/registerAddress"
             android:hint="Address"
             android:maxLength="500"
             android:maxLines="3" />
@@ -117,7 +117,7 @@
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/editText11"
+            android:id="@+id/registerCity"
             android:maxLines="1"
             android:hint="City" />
 
@@ -134,23 +134,23 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Next >"
-            android:id="@+id/button4" />
+            android:id="@+id/registerPartTwoNext" />
 
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:gravity="center">
+    <!--<LinearLayout-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_marginTop="5dp"-->
+    <!--android:gravity="center">-->
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="Data"
-            android:id="@+id/Rp2" />
+    <!--<TextView-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:textAppearance="?android:attr/textAppearanceLarge"-->
+    <!--android:text="Data"-->
+    <!--android:id="@+id/Rp2" />-->
 
-    </LinearLayout>
+    <!--</LinearLayout>-->
 
 </LinearLayout>

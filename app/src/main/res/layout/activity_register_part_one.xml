@@ -59,14 +59,6 @@
             android:id="@+id/registerFullName"
             android:hint="Full Name" />
 
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="phone"
-            android:ems="10"
-            android:id="@+id/registerMobileNumber"
-            android:hint="Mobile Number" />
-
     </LinearLayout>
 
     <!--Registration navigation buttons-->
