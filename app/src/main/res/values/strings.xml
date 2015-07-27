@@ -7,5 +7,7 @@
     <string name="title_activity_register_part_one">RegisterPartOne</string>
     <string name="title_activity_load_khoj_main">LoadKhojMainActivity</string>
     <string name="title_activity_register_part_two">register_part_two</string>
+    <string name="openDrawer">Open</string>
+    <string name="closeDrawer">Close</string>
 
 </resources>
