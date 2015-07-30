@@ -50,11 +50,14 @@ public class LoginActivity extends Activity {
         startActivity(registerNewUserIntent);
     }
 
-    public void loginSuccessful(View view) {
-        checkConnection();
+    public void startLogin(View view) {
+        //TODO remove comment for proper login
+        //checkConnectionAndLogin();
+
+        loadIntent();
     }
 
-    public void checkConnection() {
+    public void checkConnectionAndLogin() {
         ConnectivityManager cm = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo netInfo = cm.getActiveNetworkInfo();
         LoginConnectionAsyncTask myRequest = null;

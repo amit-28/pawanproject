@@ -2,9 +2,9 @@ package freeversion.loadboard.com.loadkhoj;
 
 import android.content.Intent;
 import android.support.v4.widget.DrawerLayout;
+import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
-import android.os.Bundle;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -12,9 +12,11 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.TextView;
 
 import java.util.ArrayList;
+
+import freeversion.loadboard.com.loadkhoj.Listeners.SwipeTabListener;
+import freeversion.loadboard.com.loadkhoj.constants.NavigationDrawerConstants;
 
 
 public class LoadKhojMainActivity extends ActionBarActivity implements AdapterView.OnItemClickListener {
@@ -27,15 +29,14 @@ public class LoadKhojMainActivity extends ActionBarActivity implements AdapterVi
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_load_khoj_main);
+
+        /**
+         *  NAVIGATION DRAWER
+         */
         drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         navList = (ListView) findViewById(R.id.left_drawer);
         ArrayList<String> navArray = new ArrayList<>();
-        navArray.add("Home");
-        navArray.add("Fragment 1");
-        navArray.add("Fragment 2");
-        navArray.add("Fragment 3");
-        navArray.add("Fragment 4");
-        navArray.add("Fragment 5");
+        navArray.addAll(NavigationDrawerConstants.navigationDrawerItemList);
         ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_activated_1, navArray);
         navList.setAdapter(arrayAdapter);
         navList.setOnItemClickListener(this);
@@ -43,11 +44,20 @@ public class LoadKhojMainActivity extends ActionBarActivity implements AdapterVi
         drawerLayout.setDrawerListener(actionBarDrawerToggle);
 
         ActionBar actionBar = getSupportActionBar();
-        actionBar.setDisplayShowHomeEnabled(true);
-        actionBar.setDisplayHomeAsUpEnabled(true);
+        if (actionBar != null) {
+            actionBar.setDisplayShowHomeEnabled(true);
+            actionBar.setDisplayHomeAsUpEnabled(true);
+        }
 //        actionBar.setDefaultDisplayHomeAsUpEnabled(true);
 
+        /**
+         *  SWIPE AND TABS
+         */
+
+
         loadSelection(0);
+
+        //Testing purpose
         // Get the message from the intent
         Intent intent = getIntent();
         String loginEmailId = intent.getStringExtra(LoginActivity.loginEmailIdMessage);

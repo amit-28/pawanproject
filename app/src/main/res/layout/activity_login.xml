@@ -77,7 +77,7 @@
             android:layout_height="wrap_content"
             android:text="Login"
             android:id="@+id/loginButton"
-            android:onClick="loginSuccessful"
+            android:onClick="startLogin"
             android:layout_marginRight="10dp" />
 
         <Button

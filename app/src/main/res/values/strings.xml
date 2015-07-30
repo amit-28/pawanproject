@@ -10,4 +10,10 @@
     <string name="openDrawer">Open</string>
     <string name="closeDrawer">Close</string>
 
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="private_fragment">Private fragment</string>
+    <string name="public_fragment">Public fragment</string>
+    <string name="trucks_fragment">Trucks fragment</string>
+    <string name="notifications_fragment">Notifications fragment</string>
+
 </resources>
