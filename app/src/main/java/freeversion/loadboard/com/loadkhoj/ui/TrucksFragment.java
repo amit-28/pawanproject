@@ -1,4 +1,4 @@
-package freeversion.loadboard.com.loadkhoj.fragments;
+package freeversion.loadboard.com.loadkhoj.ui;
 
 
 import android.os.Bundle;
@@ -12,10 +12,10 @@ import freeversion.loadboard.com.loadkhoj.R;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class NotificationsFragment extends Fragment {
+public class TrucksFragment extends Fragment {
 
 
-    public NotificationsFragment() {
+    public TrucksFragment() {
         // Required empty public constructor
     }
 
@@ -24,7 +24,7 @@ public class NotificationsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_notifications, container, false);
+        return inflater.inflate(R.layout.fragment_trucks, container, false);
     }
 
 

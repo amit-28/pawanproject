@@ -1,9 +1,11 @@
-package freeversion.loadboard.com.loadkhoj;
+package freeversion.loadboard.com.loadkhoj.ui;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.TextView;
+
+import freeversion.loadboard.com.loadkhoj.R;
 
 
 public class RegisterPartTwo extends Activity {
