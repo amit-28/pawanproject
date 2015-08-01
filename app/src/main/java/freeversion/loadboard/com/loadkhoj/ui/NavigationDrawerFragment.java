@@ -102,18 +102,18 @@ public class NavigationDrawerFragment extends Fragment {
                     case 5:
                         break;
                 }
-                mDrawerLayout.closeDrawer(navList);
+//                mDrawerLayout.closeDrawer(navList);
             }
         });
-        mDrawerToggle = new ActionBarDrawerToggle(mActivityContext, mDrawerLayout, R.string.openDrawer, R.string.closeDrawer);
-        mDrawerLayout.setDrawerListener(mDrawerToggle);
+//        mDrawerToggle = new ActionBarDrawerToggle(mActivityContext, mDrawerLayout, R.string.openDrawer, R.string.closeDrawer);
+//        mDrawerLayout.setDrawerListener(mDrawerToggle);
         loadSelection(0);
-        mDrawerLayout.post(new Runnable() {
-            @Override
-            public void run() {
-                mDrawerToggle.syncState();
-            }
-        });
+//        mDrawerLayout.post(new Runnable() {
+//            @Override
+//            public void run() {
+//                mDrawerToggle.syncState();
+//            }
+//        });
     }
 
     private void loadSelection(int position) {
