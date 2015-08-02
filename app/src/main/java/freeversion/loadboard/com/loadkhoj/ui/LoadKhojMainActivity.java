@@ -114,7 +114,10 @@ public class LoadKhojMainActivity extends ActionBarActivity implements TabHost.O
     private void initializeViewPager() {
 
         List<Fragment> fragments = new Vector<Fragment>();
+        fragments.add(new PublicFragment());
         fragments.add(new PrivateFragment());
+        fragments.add(new TrucksFragment());
+        fragments.add(new NotificationsFragment());
 
         this.mPagerAdapter = new PagerAdapter(super.getSupportFragmentManager(), fragments);
         this.mViewPager = (ViewPager) super.findViewById(R.id.vpgr_root);
@@ -175,8 +178,6 @@ public class LoadKhojMainActivity extends ActionBarActivity implements TabHost.O
         //TabInfo newTab = this.mapTabInfo.get(tag);
         int pos = this.mTabHost.getCurrentTab();
         this.mViewPager.setCurrentItem(pos);
-
-        initializeViewPager();
     }
 
     /* (non-Javadoc)

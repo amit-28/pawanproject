@@ -7,11 +7,9 @@ import java.util.ArrayList;
  */
 public class NavigationDrawerConstants {
     public static ArrayList<String> navigationDrawerItemList = new ArrayList<String>() {{
-        add("Home");
-        add("Fragment 1");
-        add("Fragment 2");
-        add("Fragment 3");
-        add("Fragment 4");
-        add("Fragment 5");
+        add("My Loads");
+        add("My trucks");
+        add("History");
+        add("Sign Out");
     }};
 }

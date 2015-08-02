@@ -145,10 +145,6 @@ public class NavigationDrawerFragment extends Fragment implements AdapterView.On
                 break;
             case 3:
                 break;
-            case 4:
-                break;
-            case 5:
-                break;
         }
         mDrawerLayout.closeDrawer(leftDrawerLinearLayout);
     }
