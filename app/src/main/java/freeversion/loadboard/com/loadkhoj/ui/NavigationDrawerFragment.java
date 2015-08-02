@@ -13,6 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 
 import java.util.ArrayList;
@@ -23,13 +24,14 @@ import freeversion.loadboard.com.loadkhoj.constants.NavigationDrawerConstants;
 /**
  * Created by root on 1/8/15.
  */
-public class NavigationDrawerFragment extends Fragment {
+public class NavigationDrawerFragment extends Fragment implements AdapterView.OnItemClickListener {
 
     private Activity mActivityContext;
     private NavigationDrawerFragment mFragmentContext;
 
     private ActionBarDrawerToggle mDrawerToggle;
     private DrawerLayout mDrawerLayout;
+    private LinearLayout leftDrawerLinearLayout;
     private ListView navList;
 
     private int mCurrentSelectedPosition = 0;
@@ -74,7 +76,8 @@ public class NavigationDrawerFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         mDrawerLayout = (DrawerLayout) view.findViewById(R.id.drawer_layout);
-        navList = (ListView) view.findViewById(R.id.left_drawer);
+        navList = (ListView) view.findViewById(R.id.left_drawer_list);
+        leftDrawerLinearLayout = (LinearLayout) view.findViewById(R.id.left_drawer);
         init();
 
     }
@@ -84,36 +87,8 @@ public class NavigationDrawerFragment extends Fragment {
         navArray.addAll(NavigationDrawerConstants.navigationDrawerItemList);
         ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(mActivityContext, android.R.layout.simple_list_item_activated_1, navArray);
         navList.setAdapter(arrayAdapter);
-        navList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
-                switch (position) {
-                    case 0:
-                        break;
-                    case 1:
-                        break;
-                    case 2:
-                        break;
-                    case 3:
-                        break;
-                    case 4:
-                        break;
-                    case 5:
-                        break;
-                }
-//                mDrawerLayout.closeDrawer(navList);
-            }
-        });
-//        mDrawerToggle = new ActionBarDrawerToggle(mActivityContext, mDrawerLayout, R.string.openDrawer, R.string.closeDrawer);
-//        mDrawerLayout.setDrawerListener(mDrawerToggle);
+        navList.setOnItemClickListener(this);
         loadSelection(0);
-//        mDrawerLayout.post(new Runnable() {
-//            @Override
-//            public void run() {
-//                mDrawerToggle.syncState();
-//            }
-//        });
     }
 
     private void loadSelection(int position) {
@@ -139,8 +114,6 @@ public class NavigationDrawerFragment extends Fragment {
                 super.onDrawerClosed(drawerView);
 
             }
-
-
         };
         mDrawerLayout.setDrawerListener(mDrawerToggle);
         mDrawerLayout.post(new Runnable() {
@@ -159,5 +132,24 @@ public class NavigationDrawerFragment extends Fragment {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        switch (position) {
+            case 0:
+                break;
+            case 1:
+                break;
+            case 2:
+                break;
+            case 3:
+                break;
+            case 4:
+                break;
+            case 5:
+                break;
+        }
+        mDrawerLayout.closeDrawer(leftDrawerLinearLayout);
     }
 }

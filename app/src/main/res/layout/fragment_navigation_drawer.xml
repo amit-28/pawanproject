@@ -4,10 +4,11 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".FragmentDrawerMenu">
+    tools:context=".FragmentDrawerMenu"
+    android:id="@+id/left_drawer">
 
     <ListView
-        android:id="@+id/left_drawer"
+        android:id="@+id/left_drawer_list"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#dedede"

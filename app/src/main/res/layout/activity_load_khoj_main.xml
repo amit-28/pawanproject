@@ -42,7 +42,7 @@
                 <android.support.v4.view.ViewPager
                     android:id="@+id/vpgr_root"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"></android.support.v4.view.ViewPager>
+                    android:layout_height="match_parent" />
             </LinearLayout>
         </TabHost>
     </LinearLayout>
@@ -55,7 +55,7 @@
         android:layout_height="match_parent"
         android:layout_gravity="start"
         tools:context=".NavigationDrawer"
-        tools:layout="@layout/fragment_navigation_drawer"></fragment>
+        tools:layout="@layout/fragment_navigation_drawer" />
 
 </android.support.v4.widget.DrawerLayout>
 
