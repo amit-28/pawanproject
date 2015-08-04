@@ -2,7 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="freeversion.loadboard.com.loadkhoj.ui.PublicFragment">
+    tools:context="freeversion.loadboard.com.loadkhoj.ui.fragments.PublicFragment">
 
     <!-- TODO: Update blank fragment layout -->
     <TextView

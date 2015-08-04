@@ -50,7 +50,7 @@
     <!-- The main content view -->
     <fragment
         android:id="@+id/navigation_drawer"
-        class="freeversion.loadboard.com.loadkhoj.ui.NavigationDrawerFragment"
+        class="freeversion.loadboard.com.loadkhoj.ui.fragments.NavigationDrawerFragment"
         android:layout_width="240dp"
         android:layout_height="match_parent"
         android:layout_gravity="start"

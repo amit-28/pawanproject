@@ -1,8 +1,8 @@
-package freeversion.loadboard.com.loadkhoj.ui;
+package freeversion.loadboard.com.loadkhoj.ui.fragments;
 
 import android.app.Activity;
 import android.app.Fragment;
-import android.content.pm.ActivityInfo;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -20,6 +20,8 @@ import java.util.ArrayList;
 
 import freeversion.loadboard.com.loadkhoj.R;
 import freeversion.loadboard.com.loadkhoj.constants.NavigationDrawerConstants;
+import freeversion.loadboard.com.loadkhoj.ui.activities.HistoryActivity;
+import freeversion.loadboard.com.loadkhoj.ui.activities.LoadKhojMainActivity;
 
 /**
  * Created by root on 1/8/15.
@@ -51,6 +53,7 @@ public class NavigationDrawerFragment extends Fragment implements AdapterView.On
             mCurrentSelectedPosition = savedInstanceState.getInt(STATE_SELECTED_POSITION);
         }
 
+
         // Select either the default item (0) or the last selected item.
         loadSelection(mCurrentSelectedPosition);
     }
@@ -66,7 +69,8 @@ public class NavigationDrawerFragment extends Fragment implements AdapterView.On
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_navigation_drawer, null);
-        mActivityContext.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+//        Uncomment below line to fix orientation to portrait.
+//        mActivityContext.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
         return view;
     }
@@ -138,10 +142,16 @@ public class NavigationDrawerFragment extends Fragment implements AdapterView.On
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         switch (position) {
             case 0:
+                Intent mainActivityIntent = new Intent(getActivity(), LoadKhojMainActivity.class);
+                startActivity(mainActivityIntent);
                 break;
             case 1:
+//                Intent myTructsIntent = new Intent(MainActivity.this, HistoryActivity.class);
+//                startActivity(myTructsIntent);
                 break;
             case 2:
+                Intent historyIntent = new Intent(getActivity(), HistoryActivity.class);
+                startActivity(historyIntent);
                 break;
             case 3:
                 break;

@@ -1,4 +1,4 @@
-package freeversion.loadboard.com.loadkhoj.ui;
+package freeversion.loadboard.com.loadkhoj.ui.fragments;
 
 
 import android.os.Bundle;

@@ -1,4 +1,4 @@
-package freeversion.loadboard.com.loadkhoj.ui;
+package freeversion.loadboard.com.loadkhoj.ui.activities;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -22,6 +22,11 @@ import java.util.List;
 import java.util.Vector;
 
 import freeversion.loadboard.com.loadkhoj.R;
+import freeversion.loadboard.com.loadkhoj.ui.fragments.NavigationDrawerFragment;
+import freeversion.loadboard.com.loadkhoj.ui.fragments.NotificationsFragment;
+import freeversion.loadboard.com.loadkhoj.ui.fragments.PrivateFragment;
+import freeversion.loadboard.com.loadkhoj.ui.fragments.PublicFragment;
+import freeversion.loadboard.com.loadkhoj.ui.fragments.TrucksFragment;
 
 public class LoadKhojMainActivity extends ActionBarActivity implements TabHost.OnTabChangeListener, ViewPager.OnPageChangeListener {
 
@@ -84,6 +89,7 @@ public class LoadKhojMainActivity extends ActionBarActivity implements TabHost.O
 
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {
+            actionBar.setTitle("LoadKhoj");
             actionBar.setDisplayShowHomeEnabled(true);
             actionBar.setDisplayHomeAsUpEnabled(true);
         }
