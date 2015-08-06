@@ -18,7 +18,7 @@ public class HistoryActivity extends ActionBarActivity {
         setContentView(R.layout.activity_history);
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {
-            actionBar.setTitle("LoadKhoj");
+            actionBar.setTitle("History");
             actionBar.setDisplayShowHomeEnabled(true);
             actionBar.setDisplayHomeAsUpEnabled(true);
         }

@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
@@ -49,13 +50,17 @@ public class NavigationDrawerFragment extends Fragment implements AdapterView.On
         mActivityContext = getActivity();
         mFragmentContext = this;
 
+        Log.wtf("Debug", "navigation fragment created");
+
         if (savedInstanceState != null) {
             mCurrentSelectedPosition = savedInstanceState.getInt(STATE_SELECTED_POSITION);
+            Log.wtf("Debug", "Got position: " + mCurrentSelectedPosition);
+        } else {
+            Log.wtf("Debug", "not got position: " + mCurrentSelectedPosition);
         }
 
-
         // Select either the default item (0) or the last selected item.
-        loadSelection(mCurrentSelectedPosition);
+//        loadSelection(mCurrentSelectedPosition);
     }
 
     @Override
@@ -92,7 +97,7 @@ public class NavigationDrawerFragment extends Fragment implements AdapterView.On
         ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(mActivityContext, android.R.layout.simple_list_item_activated_1, navArray);
         navList.setAdapter(arrayAdapter);
         navList.setOnItemClickListener(this);
-        loadSelection(0);
+        loadSelection(mCurrentSelectedPosition);
     }
 
     private void loadSelection(int position) {
@@ -100,6 +105,13 @@ public class NavigationDrawerFragment extends Fragment implements AdapterView.On
         if (navList != null) {
             navList.setItemChecked(position, true);
         }
+    }
+
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putInt(STATE_SELECTED_POSITION, mCurrentSelectedPosition);
+        Log.wtf("Debug", "Saved instance: " + mCurrentSelectedPosition);
     }
 
     public void setUp(DrawerLayout drawerLayout) {
@@ -140,6 +152,8 @@ public class NavigationDrawerFragment extends Fragment implements AdapterView.On
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        Log.wtf("DEBUG", "Selected Position: " + position);
+        mCurrentSelectedPosition = position;
         switch (position) {
             case 0:
                 Intent mainActivityIntent = new Intent(getActivity(), LoadKhojMainActivity.class);
