@@ -73,22 +73,14 @@ public class NavigationDrawerFragment extends Fragment implements AdapterView.On
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_navigation_drawer, null);
+        View view = inflater.inflate(R.layout.fragment_navigation_drawer, container, false);
 //        Uncomment below line to fix orientation to portrait.
 //        mActivityContext.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
-
-        return view;
-    }
-
-    @Override
-    public void onViewCreated(View view, Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
-
         mDrawerLayout = (DrawerLayout) view.findViewById(R.id.drawer_layout);
         navList = (ListView) view.findViewById(R.id.left_drawer_list);
         leftDrawerLinearLayout = (LinearLayout) view.findViewById(R.id.left_drawer);
         init();
-
+        return view;
     }
 
     void init() {
@@ -100,18 +92,21 @@ public class NavigationDrawerFragment extends Fragment implements AdapterView.On
         loadSelection(mCurrentSelectedPosition);
     }
 
-    private void loadSelection(int position) {
+    public void loadSelection(int position) {
         mCurrentSelectedPosition = position;
         if (navList != null) {
+            Log.wtf("DEBUG", "initial navlist not null selecting position: " + position);
             navList.setItemChecked(position, true);
+        } else {
+            Log.wtf("DEBUG", "navlist is null");
         }
     }
 
     @Override
     public void onSaveInstanceState(Bundle outState) {
-        super.onSaveInstanceState(outState);
         outState.putInt(STATE_SELECTED_POSITION, mCurrentSelectedPosition);
-        Log.wtf("Debug", "Saved instance: " + mCurrentSelectedPosition);
+        Log.wtf("Debug", getActivity().getLocalClassName() + " Saved instance: " + mCurrentSelectedPosition);
+        super.onSaveInstanceState(outState);
     }
 
     public void setUp(DrawerLayout drawerLayout) {
@@ -154,9 +149,16 @@ public class NavigationDrawerFragment extends Fragment implements AdapterView.On
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         Log.wtf("DEBUG", "Selected Position: " + position);
         mCurrentSelectedPosition = position;
+//        if(navList!=null){
+//            Log.wtf("DEBUG","inside switch navlist not null selecting position: "+position);
+//            navList.setItemChecked(position, true);
+//        }else{
+//            Log.wtf("DEBUG","navlist is null");
+//        }
+        mDrawerLayout.closeDrawer(leftDrawerLinearLayout);
         switch (position) {
             case 0:
-                Intent mainActivityIntent = new Intent(getActivity(), LoadKhojMainActivity.class);
+                Intent mainActivityIntent = new Intent(mActivityContext, LoadKhojMainActivity.class);
                 startActivity(mainActivityIntent);
                 break;
             case 1:
@@ -164,12 +166,11 @@ public class NavigationDrawerFragment extends Fragment implements AdapterView.On
 //                startActivity(myTructsIntent);
                 break;
             case 2:
-                Intent historyIntent = new Intent(getActivity(), HistoryActivity.class);
+                Intent historyIntent = new Intent(mActivityContext, HistoryActivity.class);
                 startActivity(historyIntent);
                 break;
             case 3:
                 break;
         }
-        mDrawerLayout.closeDrawer(leftDrawerLinearLayout);
     }
 }

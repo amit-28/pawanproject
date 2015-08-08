@@ -1,13 +1,14 @@
 package freeversion.loadboard.com.loadkhoj.ui.activities;
 
+import android.os.Bundle;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
-import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
 import freeversion.loadboard.com.loadkhoj.R;
+import freeversion.loadboard.com.loadkhoj.constants.NavigationDrawerConstants;
 import freeversion.loadboard.com.loadkhoj.ui.fragments.NavigationDrawerFragment;
 
 public class HistoryActivity extends ActionBarActivity {
@@ -18,13 +19,14 @@ public class HistoryActivity extends ActionBarActivity {
         setContentView(R.layout.activity_history);
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {
-            actionBar.setTitle("History");
+            actionBar.setTitle(NavigationDrawerConstants.DRAWER_HISTORY);
             actionBar.setDisplayShowHomeEnabled(true);
             actionBar.setDisplayHomeAsUpEnabled(true);
         }
 
         NavigationDrawerFragment drawerFragment = (NavigationDrawerFragment) getFragmentManager().findFragmentById(R.id.navigation_drawer);
         drawerFragment.setUp((DrawerLayout) findViewById(R.id.drawer_layout_history));
+        drawerFragment.loadSelection(NavigationDrawerConstants.navigationDrawerItemList.indexOf(NavigationDrawerConstants.DRAWER_HISTORY));
     }
 
     @Override
