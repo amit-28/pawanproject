@@ -1,4 +1,4 @@
-package freeversion.loadboard.com.loadkhoj.activities;
+package freeversion.loadboard.com.loadkhoj.ui.activities;
 
 import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;

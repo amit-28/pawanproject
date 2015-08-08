@@ -1,4 +1,4 @@
-package freeversion.loadboard.com.loadkhoj.activities;
+package freeversion.loadboard.com.loadkhoj.ui.activities;
 
 import android.app.Activity;
 import android.content.Intent;

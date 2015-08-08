@@ -1,4 +1,4 @@
-package freeversion.loadboard.com.loadkhoj.activities;
+package freeversion.loadboard.com.loadkhoj.ui.activities;
 
 import android.app.Activity;
 import android.content.Context;
@@ -35,6 +35,8 @@ public class LoginActivity extends Activity {
     EditText loginEmailIdEditText;
     EditText loginPasswordEditText;
     TextView responseTextView;
+    private String loginEmailId;
+    private String loginPassword;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,6 +54,11 @@ public class LoginActivity extends Activity {
     }
 
     public void loginSuccessful(View view) {
+
+        //assigning value to variable
+        loginEmailId = loginEmailIdEditText.getText().toString();
+        loginPassword = loginPasswordEditText.getText().toString();
+
         checkConnection();
     }
 
@@ -70,12 +77,10 @@ public class LoginActivity extends Activity {
     public void loadIntent() {
         Intent loadKhojMainActivityIntent = new Intent(this, LoadKhojMainActivity.class);
 
-        //assigning value to variable
-        String loginEmailId = loginEmailIdEditText.getText().toString();
-        String loginPassword = loginPasswordEditText.getText().toString();
         //passing it to next activity
         loadKhojMainActivityIntent.putExtra(loginEmailIdMessage, loginEmailId);
         loadKhojMainActivityIntent.putExtra(loginPasswordMessage, loginPassword);
+
         //starting successful Login activity
         startActivity(loadKhojMainActivityIntent);
     }
@@ -94,8 +99,8 @@ public class LoginActivity extends Activity {
 
                 JSONObject auth = new JSONObject();
                 try {
-                    auth.put("username", loginEmailIdEditText.getText().toString());
-                    auth.put("password", loginPasswordEditText.getText().toString());
+                    auth.put("username", loginEmailId);
+                    auth.put("password", loginPassword);
                 } catch (JSONException e) {
                     Log.wtf("Json Decode Error", e.getMessage());
                     return "Decode Error";
